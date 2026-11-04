@@ -1,0 +1,66 @@
+.chef-gallery-open{display:block;width:100%;padding:0;border:0;border-radius:20px;background:none;cursor:pointer}#chef-gallery-dialog{width:100vw;max-width:none;height:100dvh;max-height:none;margin:0;padding:0;border:0;border-radius:0;background:transparent;overflow:hidden;color:#fff;font-family:"General Sans",Arial,sans-serif}#chef-gallery-dialog::backdrop{background:#15131099;backdrop-filter:blur(18px)}.chef-gallery-header h2,.chef-gallery-controls{display:none}.chef-gallery-close{position:absolute;z-index:5;right:28px;top:24px;width:40px;height:40px;border:1px solid #ffffff40;border-radius:50%;background:#ffffff15;color:white;font-size:28px;cursor:pointer}.chef-gallery-track{position:absolute;inset:0;overflow:hidden;touch-action:pan-y;outline:none;mask-image:linear-gradient(to right,transparent,black 12%,black 88%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 12%,black 88%,transparent)}.chef-gallery-track img{position:absolute;left:50%;top:50%;width:min(360px,58vw);height:min(68vh,560px);object-fit:cover;border-radius:16px;will-change:transform,filter,opacity;user-select:none;-webkit-user-drag:none;pointer-events:none;transition:filter .2s,opacity .2s}.chef-gallery-track img:not(.is-center){filter:blur(9px);opacity:.55}.chef-gallery-track img.is-center{filter:none;opacity:1}.chef-gallery-track:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#17131050,transparent 35%,transparent 65%,#17131050)}@media(max-width:600px){.chef-gallery-track img{width:66vw;height:60vh}.chef-gallery-close{right:18px;top:18px}}
+
+#chef-gallery-dialog{width:min(1200px,calc(100vw - 48px));height:min(780px,86dvh);max-height:86dvh;margin:auto;background:#f0efeb;border:1px solid #353633;border-radius:0;box-shadow:none}.chef-gallery-chrome{position:absolute;top:22px;left:26px;right:26px;display:flex;align-items:center;gap:14px;color:#666;font:11px/1.4 "Courier New",monospace;letter-spacing:.04em}.chef-gallery-chrome>span:first-child{font-size:17px;letter-spacing:3px}.chef-gallery-chrome i{flex:1;border-top:1px dashed #666}#chef-gallery-dialog .chef-gallery-track{top:65px;bottom:24px;left:22px;right:22px;border-radius:0}#chef-gallery-dialog .chef-gallery-track img{height:min(61vh,560px)}#chef-gallery-dialog .chef-gallery-track:after{background:linear-gradient(90deg,#f0efeb88,transparent 35%,transparent 65%,#f0efeb88)}#chef-gallery-dialog .chef-gallery-close{position:fixed;top:12px;right:12px;background:#f0efeb;color:#444;border:1px solid #bbb;width:32px;height:32px;font-size:24px}@media(max-width:600px){#chef-gallery-dialog{width:calc(100vw - 24px);height:78dvh}.chef-gallery-chrome{left:16px;right:16px;font-size:9px}#chef-gallery-dialog .chef-gallery-track{left:10px;right:10px}#chef-gallery-dialog .chef-gallery-track img{height:55vh}}
+
+/* Gallery arrow controls */
+#chef-gallery-dialog .chef-gallery-controls{display:flex;position:absolute;z-index:20;left:30px;right:30px;top:50%;transform:translateY(-50%);justify-content:space-between;pointer-events:none}
+#chef-gallery-dialog .chef-gallery-controls span{display:none}
+#chef-gallery-dialog .chef-gallery-controls button{pointer-events:auto;display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid #b9b7b0;border-radius:50%;background:#f0efebee;color:#353633;font:24px/1 Arial,sans-serif;cursor:pointer}
+#chef-gallery-dialog .chef-gallery-controls button:hover{background:#e3e1da}
+#chef-gallery-dialog .chef-gallery-controls button:focus-visible{outline:2px solid #353633;outline-offset:3px}
+@media(max-width:600px){#chef-gallery-dialog .chef-gallery-controls{left:16px;right:16px}#chef-gallery-dialog .chef-gallery-controls button{width:36px;height:36px;font-size:21px}}
+/* Show one photo in the card at a time. */
+#chef-gallery-dialog .chef-gallery-track{mask-image:none;-webkit-mask-image:none}
+#chef-gallery-dialog .chef-gallery-track:after{display:none}
+#chef-gallery-dialog .chef-gallery-track img{left:50%;top:50%;transform:translate(-50%,-50%);width:min(420px,70vw);height:min(61vh,560px);object-fit:contain;opacity:0;filter:none;transition:opacity .25s ease}
+#chef-gallery-dialog .chef-gallery-track img.is-center{opacity:1;filter:none}
+@media(max-width:600px){#chef-gallery-dialog .chef-gallery-track img{width:70vw;height:55vh}}
+/* Single-photo viewer with a counter and navigation. */
+#chef-gallery-dialog{width:min(850px,calc(100vw - 40px));height:min(850px,90dvh);max-height:90dvh;background:transparent;border:0;overflow:visible}
+#chef-gallery-dialog .chef-gallery-chrome{display:none}
+#chef-gallery-dialog .chef-gallery-track{inset:0 0 120px;border-radius:36px;background:#171717;overflow:hidden}
+#chef-gallery-dialog .chef-gallery-track img{width:100%;height:100%;object-fit:contain;border-radius:0}
+#chef-gallery-dialog .chef-gallery-counter{position:absolute;z-index:4;top:18px;left:18px;border-radius:999px;padding:5px 12px;background:#ffffffa8;color:#252525;font:14px/1.2 "General Sans",Arial,sans-serif}
+#chef-gallery-dialog .chef-gallery-dots{position:absolute;z-index:4;bottom:137px;left:50%;transform:translateX(-50%);display:flex;gap:10px}
+#chef-gallery-dialog .chef-gallery-dots button{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:#ffffff80;cursor:pointer}
+#chef-gallery-dialog .chef-gallery-dots button[aria-current=true]{background:white}
+#chef-gallery-dialog .chef-gallery-controls{top:auto;bottom:10px;left:50%;right:auto;transform:translateX(-50%);display:grid;grid-template-columns:1fr 1fr;gap:8px;width:180px;pointer-events:auto}
+#chef-gallery-dialog .chef-gallery-controls span{display:block;grid-column:1/-1;grid-row:1;text-align:center;color:#aaa;font:12px/1.5 "General Sans",Arial,sans-serif;margin-bottom:4px}
+#chef-gallery-dialog .chef-gallery-controls button{width:86px;height:40px;border:1px solid #ffffff55;border-radius:999px;background:#ffffff20;color:#fff;font-size:22px}
+#chef-gallery-dialog .chef-gallery-controls button:hover{background:#ffffff35}
+#chef-gallery-dialog .chef-gallery-close{position:absolute;top:14px;right:14px;z-index:6;background:#ffffffcc;color:#222}
+@media(max-width:600px){#chef-gallery-dialog{width:calc(100vw - 24px);height:78dvh}#chef-gallery-dialog .chef-gallery-track{inset:0 0 110px;border-radius:24px}#chef-gallery-dialog .chef-gallery-track img{width:100%;height:100%}#chef-gallery-dialog .chef-gallery-dots{bottom:126px}}
+#chef-gallery-dialog .chef-gallery-counter{font:500 14px/1.2 "Courier New",monospace;letter-spacing:.02em}
+#chef-gallery-dialog .chef-gallery-controls span{font:12px/1.5 "Courier New",monospace;letter-spacing:.02em}
+#chef-gallery-dialog .chef-gallery-controls button{box-shadow:inset 0 1px 2px #ffffff30,0 2px 5px #0004}
+/* More compact gallery viewer */
+#chef-gallery-dialog{width:min(620px,calc(100vw - 40px));height:min(680px,84dvh);max-height:84dvh}
+@media(max-width:600px){#chef-gallery-dialog{width:calc(100vw - 32px);height:72dvh;max-height:72dvh}}
+/* Reveal image navigation on hover or keyboard focus. */
+#chef-gallery-dialog .chef-gallery-controls{display:flex;position:absolute;top:0;bottom:120px;left:0;right:0;width:auto;transform:none;align-items:center;justify-content:space-between;padding:0 16px;pointer-events:none}
+#chef-gallery-dialog .chef-gallery-controls span{display:none}
+#chef-gallery-dialog .chef-gallery-controls button{display:grid;place-items:center;width:38px;height:38px;padding:0;border:0;border-radius:50%;background:#ffffffd9;color:#313131;box-shadow:0 2px 8px #0003;font:28px/1 Arial,sans-serif;opacity:0;transition:opacity .2s;pointer-events:auto}
+#chef-gallery-dialog .chef-gallery-controls button:hover{background:white}
+#chef-gallery-dialog:hover .chef-gallery-controls button,#chef-gallery-dialog .chef-gallery-controls button:focus-visible{opacity:1}
+@media(hover:none){#chef-gallery-dialog .chef-gallery-controls button{opacity:1}}
+@media(max-width:600px){#chef-gallery-dialog .chef-gallery-controls{bottom:110px;padding:0 12px}}
+#chef-gallery-dialog .chef-gallery-track{background:#101827}
+#chef-gallery-dialog::backdrop{background:rgba(8,15,28,.84);backdrop-filter:blur(18px)}
+#chef-gallery-dialog{position:fixed;inset:0;margin:auto;border:0!important;outline:0;box-shadow:none;background:transparent}
+#chef-gallery-dialog .chef-gallery-track{background:#000;border:0;outline:0}
+#chef-gallery-dialog::backdrop{background:rgba(0,0,0,.88);backdrop-filter:blur(18px)}
+/* Center the image frame in the viewer now that the arrows sit over it. */
+#chef-gallery-dialog .chef-gallery-track{inset:0}
+#chef-gallery-dialog .chef-gallery-controls{inset:0}
+#chef-gallery-dialog .chef-gallery-dots{bottom:18px}
+#chef-gallery-dialog .chef-gallery-track img{left:50%;top:50%;transform:translate(-50%,-50%);object-position:center}
+#chef-gallery-dialog .chef-gallery-controls button{display:flex;align-items:center;justify-content:center;line-height:0}
+#chef-gallery-dialog .chef-gallery-controls button svg{display:block;flex:none;width:20px;height:20px}
+#chef-gallery-dialog .chef-gallery-close{display:flex;align-items:center;justify-content:center;padding:0;line-height:0}
+#chef-gallery-dialog .chef-gallery-close svg{display:block;flex:none;width:20px;height:20px}
+#chef-gallery-dialog{width:min(420px,calc(100vw - 32px))}
+@media(max-width:600px){#chef-gallery-dialog{width:min(380px,calc(100vw - 32px))}}
+#chef-gallery-dialog{width:min(340px,calc(100vw - 32px));height:min(480px,72dvh);max-height:72dvh}
+#chef-gallery-dialog .chef-gallery-track img{width:100%;height:100%;object-fit:cover;object-position:center}
+@media(max-width:600px){#chef-gallery-dialog{width:min(320px,calc(100vw - 32px));height:min(450px,68dvh);max-height:68dvh}}
+#chef-gallery-dialog::backdrop{background:rgba(0,0,0,.20);backdrop-filter:blur(18px)}

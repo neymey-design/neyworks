@@ -1,0 +1,6 @@
+#message-header .hero-tv-panel .tv-live-screen{overflow:hidden}
+#message-header .hero-tv-panel .tv-live-screen .tv-photo-reel{position:absolute;inset:0;width:100%;height:100%;will-change:transform}
+#message-header .hero-tv-panel .tv-live-screen .tv-photo-reel img{position:relative!important;inset:auto!important;display:block!important;flex:none;width:100%!important;height:100%!important;max-width:none;object-fit:cover;object-position:center;opacity:1!important;animation:none!important;border-radius:0}
+
+#message-header .hero-tv-panel .tv-live-screen .tv-photo-reel img{object-fit:cover!important;object-position:center;background:#181818}
+@media(min-width:701px){#message-header .hero-welcome-line{left:0;right:48px}#message-header .hero-current-work{left:calc(50% - 24px)}#message-header .hero-tv-caption{right:48px}}

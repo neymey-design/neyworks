@@ -1,0 +1,4 @@
+/* A small locally synthesised pop; no audio download is required. */
+(()=>{let ctx;function pop(){try{ctx??=new(window.AudioContext||window.webkitAudioContext)();if(ctx.state==='suspended')ctx.resume();const t=ctx.currentTime,osc=ctx.createOscillator(),gain=ctx.createGain();osc.type='sine';osc.frequency.setValueAtTime(680,t);osc.frequency.exponentialRampToValueAtTime(250,t+.075);gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(.12,t+.004);gain.gain.exponentialRampToValueAtTime(.0001,t+.11);osc.connect(gain);gain.connect(ctx.destination);osc.start(t);osc.stop(t+.12)}catch{}}
+document.addEventListener('click',e=>{const target=e.target;if(!(target instanceof Element)||target.closest('.image-compare,input,video,.ai-process-close'))return;const opener=target.closest('.ai-process-open,.project-stack-card[role="link"],.project-frame[role="button"],.project-actions button');if(opener)pop()},true);
+})();

@@ -1,0 +1,9 @@
+/* Final homepage refinements applied after the restored source styles. */
+#postcard-invite{padding-top:60px;padding-bottom:52px}
+#postcard-invite .postcard-paper{min-height:420px}
+#postcard-invite .postcard-original{height:420px}
+@media(max-width:760px){
+ #postcard-invite{padding-top:56px;padding-bottom:44px}
+ #postcard-invite .postcard-paper{min-height:430px}
+ #postcard-invite .postcard-original{height:390px}
+}
